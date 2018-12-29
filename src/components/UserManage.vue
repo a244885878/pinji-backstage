@@ -8,7 +8,7 @@
     export default {
         data: function () {
             return {
-                msg:'用户列表'
+                msg:'客服信息'
             }
         },
         methods: {}

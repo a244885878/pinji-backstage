@@ -1,6 +1,6 @@
 <template>
     <div>
-      登陆
+      登录
     </div>
 </template>
 

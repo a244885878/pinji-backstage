@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <home></home>
-    <!--<router-view/>-->
   </div>
 </template>
 
@@ -22,8 +21,7 @@ export default {
     list-style: none;
   }
 #app {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 1200px;
-  border: 1px solid red;
 }
 </style>

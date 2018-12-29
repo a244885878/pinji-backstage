@@ -1,16 +1,69 @@
 <template>
   <div class="hello">
-      <div id="title">
-        <div><span class="title-left"><img src="../assets/logo.png" height="100" width="80"/></span><span class="title-right">品记管理系统</span></div>
-      </div>
-    <div id="box">
-      <ul>
-        <li v-for="v in arr"><router-link :to="{path:'/'+v.link}">{{v.name}}</router-link></li>
-      </ul>
-      <div id="box2">
-        <router-view></router-view>
-      </div>
-    </div>
+  <el-container style="height: 580px; border: 1px solid #eee">
+    <el-aside width="200px" style="background-color: rgb(242,242,242)">
+      <el-menu :default-openeds="['1','2', '3','4','5']">
+        <el-submenu index="1">
+          <template slot="title"><i class="el-icon-menu"></i>客户管理</template>
+          <el-menu-item-group>
+            <template slot="title">管理类型</template>
+            <router-link :to="{path:'/UserManage'}" ><el-menu-item index="1-1" class="homeList">用户信息</el-menu-item></router-link>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="2">
+          <template slot="title"><i class="el-icon-menu"></i>订单管理</template>
+          <el-menu-item-group>
+            <template slot="title">订单类型</template>
+            <router-link :to="{path:'/OrderManage'}" ><el-menu-item index="2-1" class="homeList">订单信息</el-menu-item></router-link>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="3">
+          <template slot="title"><i class="el-icon-menu"></i>商品管理</template>
+          <el-menu-item-group>
+            <template slot="title">商品类别</template>
+            <router-link :to="{path:'/GoodsManage'}" > <el-menu-item index="3-1" class="homeList">招牌小熊</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-2" class="homeList">翻糖蛋糕</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-3" class="homeList">乳酪</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-4" class="homeList">甜品</el-menu-item></router-link>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="4">
+          <template slot="title"><i class="el-icon-menu"></i>统计报表</template>
+          <el-menu-item-group>
+            <template slot="title">数据表</template>
+            <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-1" class="homeList">基本信息</el-menu-item></router-link>
+            <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-2" class="homeList">销售信息</el-menu-item></router-link>
+            <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-3" class="homeList">统计信息</el-menu-item></router-link>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="5">
+          <template slot="title" ><i class="el-icon-menu"></i>客服管理</template>
+          <el-menu-item-group>
+            <template slot="title">客服信息</template>
+            <router-link :to="{path:'/UserManage'}" ><el-menu-item index="5-1" class="homeList">客服信息</el-menu-item></router-link>
+          </el-menu-item-group>
+        </el-submenu>
+      </el-menu>
+    </el-aside>
+
+    <el-container>
+      <el-header style="text-align: right; font-size: 12px" id="homeHead">
+        <span class="homeHeadFont">品记后台管理系统</span>
+        <el-dropdown>
+          <i class="el-icon-setting" style="margin-right: 15px;font-size: 18px;color: #fbfbfb"></i>
+          <el-dropdown-menu slot="dropdown">
+            <router-link :to="{path:'/Login'}"><el-dropdown-item>退出</el-dropdown-item></router-link>
+            <!--<el-dropdown-item>新增</el-dropdown-item>
+            <el-dropdown-item>删除</el-dropdown-item>-->
+          </el-dropdown-menu>
+        </el-dropdown>
+      </el-header>
+
+      <el-main>
+        <router-view class="router-view"></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
   </div>
 </template>
 
@@ -43,9 +96,19 @@ export default {
         },{
           link:"Login",
           name:"退出"
-        }]
+        }],
+      isCollapse: true,
     }
   },
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+  },
+
   component:{
       "UserManage":UserManage,
       "OrderManage":OrderManage,
@@ -58,59 +121,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  @height:50px;
-#title{
-  height: 100px;
-  width: 100%;
-  border-bottom: 1px solid #ccc;
-}
-.title-left{
-  height: 100px;
-  float: left;
-  /*border: 1px solid red;*/
-  margin: 0 80px;
-}
-.title-right{
-  float: left;
-  line-height: 100px;
-  height:100px;
-  font-size: 28px;
-  color: #BB9C7A;
-}
 
-#box{
-  position: relative;
-  height: 320px;/*首页 不包括顶部栏 的 高度*/
-}
-#box ul{
-  margin: 0;
-  padding: 0;
-  width:240px;
-  height: 600px;
-  position: absolute;
-  top: 0;
-  left:0;
-  border-right: 1px solid #ccc;
-}
-
-#box ul li{
-    font-size: 18px;
-    height:@height;
-    line-height: @height;
-    text-align: center;
-    letter-spacing: 5px;
-    border-bottom: 1px solid #ccc;
-}
-  #box ul li a{
-    color: #BB9C7A;
-    text-decoration: none;
+  /* 设置滚动条的样式 */::-webkit-scrollbar {    width: 6px;border: none}
+  /* 滚动槽 */::-webkit-scrollbar-track
+           {    /*-webkit-box-shadow: inset 0 0 5px rgb(242, 242, 242)*/;
+             border-radius: 1px;}/* 滚动条滑块 */::-webkit-scrollbar-thumb
+{    border-radius: 5px;    background: none;border: none;
+ -webkit-box-shadow: inset 0 0 6px rgb(105,105,105);
+  background: #787878;}  ::-webkit-scrollbar-thumb:window-inactive
+ {    /*background: rgba(255,0,0,0.4)*/;}
+  #homeHead{
+    background: #3e3e3e;
   }
-#box2{
-  position: absolute;
-  top: 0;
-  left: 240px;
-  border:1px solid red;
-  width: 1200px - 240px;
+ .homeHeadFont{
+   font-size: 22px;
+   color: #fbfbfb;
+   font-family: 华文行楷;
+   margin: 0 auto;
+ }
+  @height:50px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+.tac{
+  height: auto;
 }
+  .el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+  }
 
+  .el-aside {
+    color: #333;
+  }
 </style>
