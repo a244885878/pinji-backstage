@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <home></home>
+    <!--<login></login>-->
+    <!--<home></home>-->
+    <router-view name="One"></router-view>
   </div>
 </template>
 
 <script>
-import Home from './components/HomePage.vue'
+import Login from './components/Login.vue'
+//import Home from './components/HomePage.vue'
 export default {
   name: 'App',
   components:{
-      "home":Home,
+//      "home":Home,
+      "login":Login,
   }
 }
 </script>
@@ -21,7 +25,7 @@ export default {
     list-style: none;
   }
 #app {
-  margin: 20px auto;
-  width: 1200px;
+  /*margin: 20px auto;*/
+  /*width: 1200px;*/
 }
 </style>

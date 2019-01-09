@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-  <el-container style="height: 580px; border: 1px solid #eee">
+  <el-container style="height: 600px; border: 1px solid #eee">
     <el-aside width="200px" style="background-color: rgb(242,242,242)">
       <el-menu :default-openeds="['1','2', '3','4','5']">
         <el-submenu index="1">
@@ -22,9 +22,9 @@
           <el-menu-item-group>
             <template slot="title">商品类别</template>
             <router-link :to="{path:'/GoodsManage'}" > <el-menu-item index="3-1" class="homeList">招牌小熊</el-menu-item></router-link>
-            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-2" class="homeList">翻糖蛋糕</el-menu-item></router-link>
-            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-3" class="homeList">乳酪</el-menu-item></router-link>
-            <router-link :to="{path:'/GoodsManage'}" ><el-menu-item index="3-4" class="homeList">甜品</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage2'}" ><el-menu-item index="3-2" class="homeList">翻糖蛋糕</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage3'}" ><el-menu-item index="3-3" class="homeList">乳酪</el-menu-item></router-link>
+            <router-link :to="{path:'/GoodsManage4'}" ><el-menu-item index="3-4" class="homeList">甜品</el-menu-item></router-link>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="4">
@@ -34,13 +34,6 @@
             <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-1" class="homeList">基本信息</el-menu-item></router-link>
             <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-2" class="homeList">销售信息</el-menu-item></router-link>
             <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-3" class="homeList">统计信息</el-menu-item></router-link>
-          </el-menu-item-group>
-        </el-submenu>
-        <el-submenu index="5">
-          <template slot="title" ><i class="el-icon-menu"></i>客服管理</template>
-          <el-menu-item-group>
-            <template slot="title">客服信息</template>
-            <router-link :to="{path:'/UserManage'}" ><el-menu-item index="5-1" class="homeList">客服信息</el-menu-item></router-link>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -60,7 +53,7 @@
       </el-header>
 
       <el-main>
-        <router-view class="router-view"></router-view>
+        <router-view class="router-view" name="Secondary"></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -71,6 +64,9 @@
   import UserManage from './UserManage.vue'
   import OrderManage from './OrderManage.vue'
   import GoodsManage from './GoodsManage.vue'
+  import GoodsManage2 from './GoodsManage2.vue'
+  import GoodsManage3 from './GoodsManage3.vue'
+  import GoodsManage4 from './GoodsManage4.vue'
   import StatisticalTable from './StatisticalTable.vue'
   import Login from './Login.vue'
 
@@ -91,9 +87,6 @@ export default {
           link:"StatisticalTable",
           name:"统计报表"
         },{
-          link:"UserManage",
-          name:"客服管理"
-        },{
           link:"Login",
           name:"退出"
         }],
@@ -113,6 +106,9 @@ export default {
       "UserManage":UserManage,
       "OrderManage":OrderManage,
       "GoodsManage":GoodsManage,
+      "GoodsManage2":GoodsManage2,
+      "GoodsManage3":GoodsManage3,
+      "GoodsManage4":GoodsManage4,
       "StatisticalTable":StatisticalTable,
       "Login":Login,
   }
@@ -128,10 +124,15 @@ export default {
              border-radius: 1px;}/* 滚动条滑块 */::-webkit-scrollbar-thumb
 {    border-radius: 5px;    background: none;border: none;
  -webkit-box-shadow: inset 0 0 6px rgb(105,105,105);
-  background: #787878;}  ::-webkit-scrollbar-thumb:window-inactive
+  background: #B3C0D1;}  ::-webkit-scrollbar-thumb:window-inactive
  {    /*background: rgba(255,0,0,0.4)*/;}
-  #homeHead{
+
+/*  #homeHead{
     background: #3e3e3e;
+  }*/
+  .hello{
+    margin:  0 auto;
+    width: 1200px;
   }
  .homeHeadFont{
    font-size: 22px;

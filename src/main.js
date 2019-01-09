@@ -7,6 +7,9 @@ import Axios from 'axios'
 import qs from 'qs'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Vuex from 'vuex'
+
+Vue.use(Vuex);
 
 Vue.prototype.$qs = qs;
 Vue.prototype.$axios = Axios;
