@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 style="text-align: center;margin-bottom: 10px">招牌小熊类商品管理</h3>
+    <h3 style="text-align: center;margin-bottom: 10px">翻糖蛋糕类商品管理</h3>
     <template>
       <el-button size="mini"  plain type="success" style="float: right;height: 40px;margin-left: 12px;margin-right: 5px"
                  @click="show()">+ 新增</el-button>
@@ -222,7 +222,7 @@
           url:'http://localhost/getPage1',
           params:{
             page:this.currentPage1,
-            type:1,
+            type:2,
             str:this.str,
           }
         })
@@ -240,7 +240,7 @@
           url:'http://localhost/getPage1',
           params:{
             page:this.currentPage1,
-            type:1,
+            type:2,
             str:this.str,
           }
         })
@@ -257,7 +257,7 @@
           method: 'get',
           url:'http://localhost/getPageNum',
           params:{
-            type:1,
+            type:2,
           }
         })
           .then((res)=>{
@@ -275,7 +275,7 @@
           url:'http://localhost/getPage1',
           params:{
             page:1,
-            type:1,
+            type:2,
             str:this.str,
           }
         })
