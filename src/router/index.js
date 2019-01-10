@@ -11,6 +11,9 @@ import GoodsManage3 from '@/components/GoodsManage3.vue'
 import GoodsManage4 from '@/components/GoodsManage4.vue'
 
 import StatisticalTable from '@/components/StatisticalTable.vue'
+import Essential from '@/components/Essential.vue'
+import Sales from '@/components/Sales.vue'
+
 import OrderDetails from '@/components/OrderDetails.vue'
 import store from '../vuex/store.js'
 
@@ -102,7 +105,22 @@ const aaa=new Router({
           },
           meta:{auth:true},
         },
-
+        {
+          path:'/Essential',
+          name:'Essential',
+          components: {
+            Secondary:Essential
+          },
+          meta:{auth:true},
+        },
+        {
+          path:'/Sales',
+          name:'Sales',
+          components: {
+            Secondary:Sales
+          },
+          meta:{auth:true},
+        },
 
         {
           path:'/HomePage',

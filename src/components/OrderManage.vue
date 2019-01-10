@@ -1,16 +1,14 @@
 <template>
     <div id="OrderManage">
       <header>
-        <span>
+        <span class="tit">
           订单详情
-
         </span>
 
           <el-select v-model="value4" clearable placeholder="请选择" class="y-t1">
             <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
-          <el-input placeholder="请输入订单编号" v-model="input10" clearable class="y-t1"></el-input>
-          <!--<el-button type="primary" icon="el-icon-search">搜索</el-button>-->
+          <el-input placeholder="请输入订单编号" v-model="input10" clearable class="y-t1" style="margin: 5px 0;"></el-input>
           <span>{{title}}</span>
 
       </header> <!--搜索头-->
@@ -18,7 +16,6 @@
       <section>
         <el-table
           :data="tableData6"
-          border
           style="width: 100%">
           <el-table-column
             type="index"
@@ -66,7 +63,6 @@
               </el-button>
             </template>
           </el-table-column>
-        </el-table>
         </el-table>
       </section> <!--表格-->
 
@@ -264,7 +260,6 @@ span{
   header{
     height: 50px;
     width: 100%;
-    border-bottom: 1px solid #ebeef5;
 }
   .el-table{
     font-size: 12px;
@@ -283,5 +278,12 @@ footer{
   a{
     color: blue;
     text-decoration:none;
+  }
+  .tit{
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  color: #909399;
   }
 </style>

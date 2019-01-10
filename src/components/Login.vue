@@ -33,7 +33,7 @@
 <script>
   import store from '../vuex/store.js'
 
-    document.body.parentNode.style.overflow = "hidden";
+
     export default {
         data: function () {
             return {
@@ -106,6 +106,13 @@
           },
         },
       computed:{
+
+      },
+      created(){
+         document.body.parentNode.style.overflow = "hidden";
+      },
+      destroyed(){
+        document.body.parentNode.style.overflow = "auto";
       }
     }
 </script>

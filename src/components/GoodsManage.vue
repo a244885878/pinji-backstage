@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h3 style="text-align: center;margin-bottom: 10px">招牌小熊类商品管理</h3>
-    <template>
-      <el-button size="mini"  plain type="success" style="float: right;height: 40px;margin-left: 12px;margin-right: 5px"
+    <header style="height: 50px; line-height: 50px;">
+        <span class="tit">
+          招牌小熊类商品管理
+    </span>
+      <el-button size="mini"  plain type="success" style="float: right;height: 40px;margin-left: 12px;margin-top: 5px;margin-right: 5px"
                  @click="show()">+ 新增</el-button>
-      <el-button size="mini" plain type="primary" style="float: right;height: 40px;margin-left: 12px"
+      <el-button size="mini" plain type="primary" style="float: right;height: 40px;margin-left: 12px;margin-top: 5px;"
                  @click="query()">查询</el-button>
       <el-input placeholder="请输入商品名称" style="width: 200px;height:40px;float: right" value="str" v-model="str">
       </el-input>
+    </header>
+    <template>
       <el-table
         :data="cakeData"
         style="width: 100%">
@@ -70,7 +74,7 @@
       <div class="add">
         <span class="close" @click="close()"> X </span>
         <el-button  size="mini" type="primary" @click="confirm()" class="confirm">确定</el-button>
-        <h1 style="text-align: center;font-size: 18px;color:#303133;font-weight: normal;margin-top: 15px;margin-bottom: 10px">
+        <h1 style="text-align: center;font-size: 24px;color:#303133;font-weight: normal;margin-top: 15px;margin-bottom: 15px;">
           新增商品</h1>
         <div>
           <el-form ref="form" :model="form" label-width="80px">
@@ -468,9 +472,9 @@
   }
   .add{
     display: inline-block;
+    overflow: auto;
     width: 600px;
-    height: 720px;
-    padding-bottom: 10px;
+    height: 750px;
     vertical-align: middle;
     background-color: #fff;
     border-radius: 4px;
@@ -478,12 +482,18 @@
     font-size: 18px;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     text-align: left;
-    overflow: hidden;
     backface-visibility: hidden;
     position: absolute;
     top: 5px;
     left: 30%;
     z-index: 99;
+    padding:  20px;
+  }
+  .el-col-11{
+    width: 100%;
+  }
+  .el-select{
+    width:  100%;
   }
   .shade{
     width: 100%;
@@ -564,5 +574,19 @@
     position: absolute;
     right: 15px;
     bottom: 15px;
+  }
+  .el-upload-list{
+    display: inline-block;
+    border:  1px solid red;
+  }
+  /*.el-form-item__label{*/
+    /*font-size: 16px;*/
+  /*}*/
+  .tit{
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    line-height: 30px;
+    color: #909399;
   }
 </style>

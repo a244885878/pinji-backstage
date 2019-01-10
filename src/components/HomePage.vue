@@ -32,8 +32,8 @@
           <el-menu-item-group>
             <template slot="title">数据表</template>
             <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-1" class="homeList">基本信息</el-menu-item></router-link>
-            <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-2" class="homeList">销售信息</el-menu-item></router-link>
-            <router-link :to="{path:'/StatisticalTable'}" ><el-menu-item index="4-3" class="homeList">统计信息</el-menu-item></router-link>
+            <router-link :to="{path:'/Essential'}" ><el-menu-item index="4-2" class="homeList">销售信息</el-menu-item></router-link>
+            <router-link :to="{path:'/Sales'}" ><el-menu-item index="4-3" class="homeList">统计信息</el-menu-item></router-link>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -131,7 +131,7 @@ export default {
     background: #3e3e3e;
   }*/
   .hello{
-    margin:  0 auto;
+    margin:  20px auto;
     width: 1200px;
   }
  .homeHeadFont{

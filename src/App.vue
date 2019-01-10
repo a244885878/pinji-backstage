@@ -24,8 +24,8 @@ export default {
     padding: 0;
     list-style: none;
   }
-#app {
-  /*margin: 20px auto;*/
-  /*width: 1200px;*/
-}
+/*#app {
+  margin: 20px auto;
+  width: 1200px;
+}*/
 </style>

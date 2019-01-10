@@ -123,7 +123,7 @@
       },
       //按钮跳转页面并获取数据
       jump(s,p){
-        this.$router.push({ path: 'OrderDetails', query: { userID: p.userID}})
+        this.$router.push({ path: 'OrderManage', query: { userID: p.userID}})
       },
       //  查询数据（与分页绑定）
       query(){
@@ -165,12 +165,13 @@
     width: 50%;
   }
   .zx2{
-    font-size: 16px;
+    font-size: 20px;
     width: 100px;
-    height: 60px;
-    padding: 20px;
+    height: 50px;
+    /*padding: 20px;*/
+    margin-right: 20px;
+    line-height: 50px;
     color: #909399;
-
   }
   .block{
     text-align:center;
@@ -180,4 +181,10 @@
   margin: 20px;
 }
 
+  /*span {*/
+    /*font-size: 20px;*/
+    /*line-height: 50px;*/
+    /*font-family: "Helvetica Neue",Helvetica,"PingFang SC","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;*/
+    /*color: #909399;*/
+  /*}*/
 </style>

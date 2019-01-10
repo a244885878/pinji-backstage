@@ -1,7 +1,7 @@
 <template>
     <div>
       <header>
-        <span>
+        <span class="tit">
           <span class="el-icon-back" @click="back()"></span>
           订单详情
         </span>
@@ -16,7 +16,7 @@
               {{arr.orderTypeName}}
             </p>
             <p>订单时间:
-              {{arr.o_orderTime +' '+ arr.o_orderTime2}}
+              {{arr.o_orderTime }}
             </p>
           </div>
         </el-card>
@@ -43,7 +43,7 @@
           </div>
         </el-card>
       </section>
-      <section>
+      <section class="sec2">
         <ul class="sec2-head">
           <li>图片</li>
           <li>商品名称</li>
@@ -65,7 +65,6 @@
       </section>
       <footer>
         <div>商品数量总计:<span>{{change}}</span>件</div>
-        <div>运费:0元</div>
         <div>合计商品金额:<span>{{change2}}</span>元</div>
       </footer>
     </div>
@@ -122,6 +121,7 @@
                 });
                 this.tableData=res.data.content;
                 this.arr=res.data.content[0];
+                console.log(this.arr)
               }).catch((err)=>{
                 console.log('报错了:'+err)
             })
@@ -194,11 +194,29 @@ footer {
   text-align: right;
   font-size: 16px;
   color:#606266;
+  margin:  20px 0 0 0;
 }
+  footer div{
+    width: 49%;
+    display: inline-block;
+  }
+  footer div:nth-of-type(1){
+    text-align: left;
+  }
   footer span{
    display: inline-block;
    margin: 0 5px;
    font-size: 14px;
    color: #BB9C7A;
  }
+  .sec2{
+    margin:  20px 0 0 0 ;
+  }
+  .tit{
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    color: #909399;
+  }
 </style>
